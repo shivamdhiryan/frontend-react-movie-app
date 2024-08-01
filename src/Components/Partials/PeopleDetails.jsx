@@ -15,6 +15,7 @@ const PeopleDetails = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const {info} = useSelector(state => state.person);
+  //information
   useEffect(()=>{
       dispatch(asyncloadperson(id));
       return ()=>{
@@ -70,6 +71,7 @@ const PeopleDetails = () => {
           s.original_name ||
           s.original_title
           }
+         
           <p className='p-4'>{s.character && `Character Name : ${s.character}`}</p>
           </li>
           </Link>
