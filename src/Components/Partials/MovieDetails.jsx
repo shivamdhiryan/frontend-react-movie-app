@@ -8,7 +8,6 @@ import Horizonal from './HorizontalCard'
 
 const MovieDetails = () => {
  const {pathname} = useLocation();
- console.log(pathname)
   const {id} = useParams();
   const dispatch = useDispatch();
   const {info} = useSelector(state => state.movie);

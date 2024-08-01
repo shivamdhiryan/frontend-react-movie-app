@@ -8,11 +8,9 @@ import Horizonal from './HorizontalCard'
 import noPhoot from '../../../public/nophoto.jpeg'
 const TvDetails = () => {
   const {pathname} = useLocation();
-  console.log(pathname)
    const {id} = useParams();
    const dispatch = useDispatch();
    const {info} = useSelector(state => state.tv);
-   console.log(info);
    useEffect(()=>{
        dispatch(asyncloadtv(id));
        return ()=>{

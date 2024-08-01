@@ -35,7 +35,6 @@ const Home = () => {
         !wallpaper && headerData();
          getTrending();
     }, [category])
-    // console.log(horizontalData);
     return wallpaper && horizontalData ? (<>
         <SideBar />
         <div className='w-[80%] h-[100%] overflow-x-hidden'>

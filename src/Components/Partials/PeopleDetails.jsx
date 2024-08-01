@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { asyncloadperson } from '../store/actions/personAction';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link,useNavigate, useParams } from 'react-router-dom';
 import { removeperson } from '../store/reducers/personSlice';
 import Loading from '../../Components/Loading'
 import HorizontalCard from './HorizontalCard';
 import Dropdown from './Dropdown';
 import noPhoot from '../../../public/nophoto.jpeg'
 
+
 const PeopleDetails = () => {
-  const {pathname} = useLocation();
   const [category,setCategroy] = useState("movie");
   const navigate = useNavigate();
- console.log(pathname)
   const {id} = useParams();
   const dispatch = useDispatch();
   const {info} = useSelector(state => state.person);
@@ -64,7 +63,7 @@ const PeopleDetails = () => {
        </div>
        <div className='w-[100%] h-[50vh] overflow-x-hidden overflow-y-auto shadow-xl shadow-[rgba(255,255,255,.5)] text-zinc-300 mt-4 p-4'>
         {info[category + "Credits"].data.cast.map((s,i)=>(
-          <Link to={`/${category}/details/${s.id}`}>
+          <Link key={i} to={`/${category}/details/${s.id}`}>
           <li key={i} className='hover:text-white p-4 rounded-lg hover:bg-black'>
             {s.name || 
           s.title || 
