@@ -63,7 +63,7 @@ const TvDetails = () => {
           <div className='w-[100%] flex overflow-y-auto gap-4'> 
             {info.detail.seasons.map((s,i)=>(
                 <>
-                <div className='min-w-[18%] h-[40vh]  bg-red-200'>
+                <div key={i} className='min-w-[18%] h-[40vh]  bg-red-200'>
                     <img className='w-[100%] h-[100%] object-cover object-center' src={s.poster_path ? `https://image.tmdb.org/t/p/original/${s.poster_path}`:noPhoot} alt="" />
                     <h1 className='text-white text-2xl'>{info.detail.name || s.name}</h1>
                 </div>

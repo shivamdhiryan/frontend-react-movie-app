@@ -21,7 +21,6 @@ const Trending = () => {
             const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`);
             if(data.results.length > 0){
                 setTrending((prev)=>[...prev,...data.results]);
-                console.log(data.results);
                 setPage(page+1)
             }
             else{
