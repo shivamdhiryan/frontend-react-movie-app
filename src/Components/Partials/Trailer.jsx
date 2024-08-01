@@ -9,7 +9,6 @@ const Trailer = () => {
   const { pathname } = useLocation();
   const category = pathname.includes("movie") ? "movie" : "tv";
   const ytvideo = useSelector(state => state[category].info.videos);
-  console.log(ytvideo);
   return (
     <div className='w-screen h-[120vh] bg-[rgba(0,0,0,.9)] absolute top-[0%] left-[0%] flex justify-center items-center'>
       <Link className="text-white text-5xl absolute top-[2%] right-[10%]" onClick={() => navigate(-1)}><i className="ri-close-line"></i></Link>
